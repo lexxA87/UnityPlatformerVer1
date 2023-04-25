@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5759651821516053533}
   m_Layer: 0
-  m_Name: ShootPoint
+  m_Name: CastPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -219,4 +219,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _castCalldown: 1
   _fireballPrefab: {fileID: 2752872665808300505, guid: b6f975d6f4e2bee4b81d376a86f2a742, type: 3}
+  _castPoint: {fileID: 7390234977131326189}
   _castTriggerName: CastTrigger

@@ -19,15 +19,19 @@ public class PlayerMove : MonoBehaviour
     //[SerializeField] private bool _isMoveBool = false;
 
     private bool _onGround = false;
+    private bool _isLeftMove = false;
     public bool OnGround
     {
         get => _onGround;
     }
 
+    public bool IsLeftMove
+    {
+        get => _isLeftMove;
+    }
+
     private Rigidbody2D _body;
     private Animator _animator;
-
-    private bool _isLeftMove = false;
 
     private void Awake()
     {
