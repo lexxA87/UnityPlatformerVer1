@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -18,14 +19,54 @@ public class PlayerCast : MonoBehaviour
     private Transform _fireballHolder;
     private Transform _castPointTransform;
 
+    private List<FireballController> _fireballPool;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _playerMove = GetComponent<PlayerMove>();
         var holder = new GameObject("FireballHolder");
         _fireballHolder = holder.transform;
-
+        _fireballPool = new List<FireballController>();
         _castPointTransform = _castPoint.transform;
+    }
+
+    private void CreateFireball()
+    {
+        FireballController fireball = null;
+
+        _fireballPool.ForEach(item =>
+        {
+            if (!item.gameObject.activeInHierarchy)
+            {
+                fireball = item;
+                return;
+            }
+        });
+
+        if (fireball == null)
+        {
+            fireball = Instantiate(_fireballPrefab, _castPointTransform.position, _castPointTransform.rotation, _fireballHolder);
+            _fireballPool.Add(fireball);
+        }
+        else
+        {
+            fireball.gameObject.SetActive(true);
+            fireball.transform.position = _castPointTransform.position;
+        }
+
+        fireball.Init(_playerMove.IsLeftMove);
+    }
+
+    private void CheckCastFireball()
+    {
+        if (Input.GetAxis("Fire1") != 0 && _counterCallDown >= _castCalldown)
+        {
+            _animator.SetTrigger(_castTriggerName);
+            _counterCallDown = 0;
+
+            CreateFireball();
+        }
     }
 
     // Update is called once per frame
@@ -33,13 +74,6 @@ public class PlayerCast : MonoBehaviour
     {
         _counterCallDown += Time.deltaTime;
 
-        if (Input.GetAxis("Fire1") != 0 && _counterCallDown >= _castCalldown)
-        {
-            _animator.SetTrigger(_castTriggerName);
-            _counterCallDown = 0;
-
-            var fireball = Instantiate(_fireballPrefab, _castPointTransform.position, _castPointTransform.rotation, _fireballHolder);
-            fireball.Init(_playerMove.IsLeftMove);
-        }
+        CheckCastFireball();
     }
 }
