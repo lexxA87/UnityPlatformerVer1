@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 2052807313
+    locked: 0
+  - name: BG-Secondary
+    uniqueID: 1463646855
+    locked: 0
+  - name: Ground
+    uniqueID: 3354261241
+    locked: 0
+  - name: Player
+    uniqueID: 2602868089
+    locked: 0
