@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     [Range(0.2f, 50f)]
     [SerializeField]
     private float _jumpPower = 5;
+    [SerializeField] private GameObject _start;
 
     [Header("Animation")]
     [SerializeField] private string _jumpTriggerName = "JumpTrigger";
@@ -38,6 +39,11 @@ public class PlayerMove : MonoBehaviour
     {
         _body = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        transform.position = _start.transform.position;
     }
 
     private void CheckJump()
