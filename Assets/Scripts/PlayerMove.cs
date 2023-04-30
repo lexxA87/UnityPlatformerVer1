@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     private bool _onGround = false;
     private bool _isLeftMove = false;
+    private bool _onStair = false;
     public bool OnGround
     {
         get => _onGround;
@@ -49,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+
     private void CheckFlip(float horizontalInput)
     {
         var isLeftFlip = horizontalInput < -0.01f && !_isLeftMove;
@@ -64,15 +66,24 @@ public class PlayerMove : MonoBehaviour
     private void CheckMove()
     {
         var horizontalInput = Input.GetAxis("Horizontal");
+        var verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput == 0)
+        if (horizontalInput == 0 && verticalInput == 0)
         {
             _animator.SetBool(_isWalkName, false);
             return;
         }
 
-        _body.velocity = new Vector2(horizontalInput * _speed, _body.velocity.y);
-        _animator.SetBool(_isWalkName, true);
+        if (_onStair)
+        {
+            _body.velocity = new Vector2(_body.velocity.x, verticalInput * _speed);
+            _animator.SetBool(_isWalkName, true);
+        }
+        else
+        {
+            _body.velocity = new Vector2(horizontalInput * _speed, _body.velocity.y);
+            _animator.SetBool(_isWalkName, true);
+        }
 
         CheckFlip(horizontalInput);
 
@@ -89,4 +100,16 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground")) { _onGround = true; }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Stair")) { _onStair = true; }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Stair")) { _onStair = false; }
+    }
+
+
 }
