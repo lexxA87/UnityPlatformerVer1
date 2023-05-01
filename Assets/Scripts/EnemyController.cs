@@ -1,7 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class EnemyController : MonoBehaviour
 {
+    private Animator _animator;
+
     [Header("Params")]
     [Range(0.01f, 1f)]
     [SerializeField]
@@ -14,14 +17,29 @@ public class EnemyController : MonoBehaviour
     private int _damage = 50;
     [SerializeField] Vector3[] _pointsPosition;
     [SerializeField] private PlayerHealth _player;
-
+    [Header("Animation")]
+    [SerializeField] private string _isDeadName = "IsDead";
 
     private int _currentTarget;
 
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void FixedUpdate()
     {
+        CheckDead();
         Move();
+    }
+
+    private void CheckDead()
+    {
+        if (_health <= 0)
+        {
+            _animator.SetBool(_isDeadName, true);
+            return;
+        }
     }
 
     private void Move()
@@ -54,9 +72,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player attacked!");
             _player.Health -= _damage;
-            Debug.Log("Health player: " + _player.Health);
         }
     }
 
@@ -64,9 +80,21 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.CompareTag("PlayerDamage"))
         {
-
-            Debug.Log("DAmage!!!");
-            Debug.Log(collision.gameObject.name);
+            if (collision.gameObject.name == "Sword")
+            {
+                _health -= 50;
+                Debug.Log("Sword attack" + _health);
+            }
+            if (collision.gameObject.name == "Fireball(Clone)")
+            {
+                _health -= 25;
+                Debug.Log("Fireball attack" + _health);
+            }
         }
+    }
+
+    public void OnDestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }

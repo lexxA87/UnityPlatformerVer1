@@ -33665,6 +33665,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6187670889877103051, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187670889877103051, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
