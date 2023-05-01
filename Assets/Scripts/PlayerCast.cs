@@ -70,7 +70,7 @@ public class PlayerCast : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _counterCallDown += Time.deltaTime;
 

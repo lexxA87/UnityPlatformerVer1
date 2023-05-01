@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         _counterCallDown += Time.deltaTime;
 

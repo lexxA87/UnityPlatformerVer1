@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Stair
   - Fire
+  - Enemy
+  - PlayerDamage
   layers:
   - Default
   - TransparentFX

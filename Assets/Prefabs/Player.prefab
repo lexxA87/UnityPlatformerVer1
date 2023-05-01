@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5520233881639137322}
   - component: {fileID: 7309620295770956210}
+  - component: {fileID: 2134183033442342715}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: PlayerDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +95,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!70 &2134183033442342715
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187670889877103051}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7390234977131326189
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +158,7 @@ GameObject:
   - component: {fileID: 8325852633090229993}
   - component: {fileID: 330522365077401033}
   - component: {fileID: -422749464144832816}
+  - component: {fileID: 4353491110657207145}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -230,7 +248,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0, y: -0.4159346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -241,7 +259,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 1, y: 1.4019238}
   m_EdgeRadius: 0
 --- !u!50 &8325852633090229995
 Rigidbody2D:
@@ -278,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpPower: 5
+  _start: {fileID: 0}
   _jumpTriggerName: JumpTrigger
   _isWalkName: IsWalk
 --- !u!95 &8325852633090229993
@@ -331,3 +350,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackCalldown: 1
   _attackTriggerName: AttackTrigger
+--- !u!114 &4353491110657207145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325852633090229999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341e3be163702974aa16b37efae4b670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 200
