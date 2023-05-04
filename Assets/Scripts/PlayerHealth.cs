@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Params")]
     [SerializeField]
     private int _health = 200;
+    [SerializeField] private TextMeshProUGUI _textHealth;
     [Header("Animation")]
     [SerializeField] private string _isDeadName = "IsDead";
 
@@ -18,11 +20,13 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _textHealth.text = _health.ToString();
     }
 
     private void FixedUpdate()
     {
         CheckDead();
+        _textHealth.text = _health.ToString();
     }
 
     private void CheckDead()
