@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private int _damage = 50;
     [SerializeField] Vector3[] _pointsPosition;
     [SerializeField] private PlayerHealth _player;
+    [SerializeField] private GameObject _coinPrefab;
     [Header("Animation")]
     [SerializeField] private string _isDeadName = "IsDead";
 
@@ -93,8 +94,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void CreateCoin()
+    {
+        Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+    }
+
     public void OnDestroyEnemy()
     {
         Destroy(gameObject);
+        CreateCoin();
     }
 }
