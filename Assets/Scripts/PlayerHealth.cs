@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,15 +15,22 @@ public class PlayerHealth : MonoBehaviour
     [Range(50, 500)]
     private int _maxHealth = 200;
     [SerializeField] private TextMeshProUGUI _textHealth;
+
     [Header("Animation")]
     [SerializeField] private string _isDeadName = "IsDead";
     [SerializeField] private string _hurtName = "HurtTrigger";
+
+    [Header("iFrames")]
+    [SerializeField] private float _iFramesDuration = 1;
+    [SerializeField] private int _numberOfFlashes = 3;
+    private SpriteRenderer _spriteRenderer;
 
     public int Health { get { return _currentHealth; } set { _currentHealth = value; } }
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _textHealth.text = _currentHealth.ToString();
     }
 
@@ -36,11 +44,13 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _animator.SetBool(_isDeadName, true);
+            GetComponent<PlayerMove>().enabled = false;
             return;
         }
         else
         {
             _animator.SetTrigger(_hurtName);
+            StartCoroutine(Invunerability());
         }
     }
 
@@ -60,6 +70,21 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHealth -= _damage;
         CheckDead();
+    }
+
+    private IEnumerator Invunerability()
+    {
+        Physics2D.IgnoreLayerCollision(7, 8, true);
+
+        for (int i = 0; i < _numberOfFlashes; i++)
+        {
+            _spriteRenderer.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(_iFramesDuration / (_numberOfFlashes * 2));
+            _spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(_iFramesDuration / (_numberOfFlashes * 2));
+        }
+
+        Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 
     public void ReloadScene()

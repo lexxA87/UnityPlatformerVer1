@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5520233881639137322}
   - component: {fileID: 7309620295770956210}
   - component: {fileID: 2134183033442342715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: PlayerDamage
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759651821516053533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CastPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: -422749464144832816}
   - component: {fileID: 4353491110657207145}
   - component: {fileID: 2093597693238778484}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -363,9 +363,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341e3be163702974aa16b37efae4b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
+  _currentHealth: 200
+  _maxHealth: 200
   _textHealth: {fileID: 0}
   _isDeadName: IsDead
+  _hurtName: HurtTrigger
+  _iFramesDuration: 0
+  _numberOfFlashes: 0
 --- !u!114 &2093597693238778484
 MonoBehaviour:
   m_ObjectHideFlags: 0

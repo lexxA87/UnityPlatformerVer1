@@ -34118,6 +34118,14 @@ PrefabInstance:
       propertyPath: _textHealth
       value: 
       objectReference: {fileID: 1076320118}
+    - target: {fileID: 4353491110657207145, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
+      propertyPath: _iFramesDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353491110657207145, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
+      propertyPath: _numberOfFlashes
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6187670889877103051, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
       propertyPath: m_Name
       value: Sword

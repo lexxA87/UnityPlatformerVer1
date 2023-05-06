@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3849323849501861854}
   - component: {fileID: 1133584875380763327}
   - component: {fileID: 7975779349107900414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rat_Gray
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -198,5 +198,7 @@ MonoBehaviour:
   _speed: 3
   _health: 100
   _damage: 50
-  _points: []
+  _pointsPosition: []
   _player: {fileID: 4353491110657207145, guid: 22ac30adf5b3b34408d0afd4e476bc1a, type: 3}
+  _coinPrefab: {fileID: 0}
+  _isDeadName: IsDead
