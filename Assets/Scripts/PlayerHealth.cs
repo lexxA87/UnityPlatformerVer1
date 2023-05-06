@@ -16,8 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textHealth;
     [Header("Animation")]
     [SerializeField] private string _isDeadName = "IsDead";
-
-
+    [SerializeField] private string _hurtName = "HurtTrigger";
 
     public int Health { get { return _currentHealth; } set { _currentHealth = value; } }
 
@@ -29,7 +28,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CheckDead();
         _textHealth.text = _currentHealth.ToString();
     }
 
@@ -39,6 +37,10 @@ public class PlayerHealth : MonoBehaviour
         {
             _animator.SetBool(_isDeadName, true);
             return;
+        }
+        else
+        {
+            _animator.SetTrigger(_hurtName);
         }
     }
 
@@ -52,6 +54,12 @@ public class PlayerHealth : MonoBehaviour
         {
             _currentHealth += count;
         }
+    }
+
+    public void DamageHealth(int _damage)
+    {
+        _currentHealth -= _damage;
+        CheckDead();
     }
 
     public void ReloadScene()
