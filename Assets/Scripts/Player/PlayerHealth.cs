@@ -36,7 +36,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _textHealth.text = _currentHealth.ToString();
+        if (_currentHealth >= 0)
+            _textHealth.text = _currentHealth.ToString();
+        else _textHealth.text = "0";
     }
 
     private void CheckDead()

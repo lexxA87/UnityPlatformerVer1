@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2324360369487593431}
   - component: {fileID: 2324360369487593425}
   - component: {fileID: 2324360369487593428}
+  - component: {fileID: 2051354383379772212}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Enemy
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec81519eb4f16db47afec955db1c571b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,9 +149,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackCooldown: 1
   _range: 2.24
-  _colliderDistance: 1.22
   _damage: 75
+  _colliderDistance: 1.22
   _boxCollider: {fileID: 2324360369487593431}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &2051354383379772212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324360369487593426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dc819b1a654394b84dd6a1a721e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 300
+  iFramesDuration: 1
+  numberOfFlashes: 1
+  components:
+  - {fileID: 2324360369487593428}

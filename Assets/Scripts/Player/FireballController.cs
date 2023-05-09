@@ -15,10 +15,14 @@ public class FireballController : MonoBehaviour
     [Header("Params")]
     [Range(1f, 50f)]
     [SerializeField] private float _speed = 5;
+    [Range(10, 100)]
+    [SerializeField] private int _damage = 25;
     [Range(1f, 10f)]
     [SerializeField] private float _lifeTime = 3;
     [Header("Animation")]
     [SerializeField] private string _exploreTriggerName = "ExploreTrigger";
+
+    public int Damage { get { return _damage; } }
 
     private void Awake()
     {
@@ -52,6 +56,11 @@ public class FireballController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) return;
+
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Health>().TakeDamage(_damage);
+        }
 
         _body.velocity = new Vector2(0, 0);
         _isMove = false;

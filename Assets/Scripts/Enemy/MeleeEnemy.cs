@@ -2,14 +2,22 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
+    [Header("Attack params")]
+    [Range(0, 3f)]
     [SerializeField] private float _attackCooldown;
+    [Range(0.5f, 5f)]
     [SerializeField] private float _range;
-    [SerializeField] private float _colliderDistance;
+    [Range(10, 200)]
     [SerializeField] private int _damage;
-    [SerializeField] private BoxCollider2D _boxCollider;
-    [SerializeField] private LayerMask _playerLayer;
-    private float _cooldownTimer = Mathf.Infinity;
 
+    [Header("Collider params")]
+    [SerializeField] private float _colliderDistance;
+    [SerializeField] private BoxCollider2D _boxCollider;
+
+    [Header("Player layer")]
+    [SerializeField] private LayerMask _playerLayer;
+
+    private float _cooldownTimer = Mathf.Infinity;
     private Animator _animator;
     private PlayerHealth _playerHealth;
     private EnemyPatrol _enemyPatrol;
@@ -54,6 +62,32 @@ public class MeleeEnemy : MonoBehaviour
 
         return hit.collider != null;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        int damage = 0;
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHealth>().DamageHealth(_damage);
+        }
+
+        if (collision.CompareTag("PlayerDamage"))
+        {
+
+            if (collision.gameObject.name == "Sword")
+            {
+                damage = collision.GetComponentInParent<PlayerAttack>().DamageSword;
+            }
+            if (collision.gameObject.name == "Fireball(Clone)")
+            {
+                damage = collision.GetComponent<FireballController>().Damage;
+            }
+
+            transform.GetComponent<Health>().TakeDamage(damage);
+        }
+    }
+
 
     private void OnDrawGizmos()
     {

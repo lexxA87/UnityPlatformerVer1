@@ -7,11 +7,13 @@ public class PlayerAttack : MonoBehaviour
     [Header("Params")]
     [Range(0.1f, 10f)]
     [SerializeField] private float _attackCalldown = 1;
+    [Range(10, 200)]
+    [SerializeField] private int _damageSword = 50;
 
     [Header("Animation")]
     [SerializeField] private string _attackTriggerName = "AttackTrigger";
 
-
+    public int DamageSword { get { return _damageSword; } }
     private float _counterCallDown = 0;
 
     private void Awake()

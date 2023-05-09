@@ -159,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f1d1261ca37d44fa08c11908461f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 10
+  _damage: 25
   _lifeTime: 3
   _exploreTriggerName: ExploreTrigger
 --- !u!1 &5236378799320551392
