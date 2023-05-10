@@ -300,6 +300,7 @@ MonoBehaviour:
   _start: {fileID: 0}
   _jumpTriggerName: JumpTrigger
   _isWalkName: IsWalk
+  _jumpSound: {fileID: 8300000, guid: 89ff40d260d67bb4b8a976945fb42cc7, type: 3}
 --- !u!95 &8325852633090229993
 Animator:
   serializedVersion: 5
@@ -337,6 +338,7 @@ MonoBehaviour:
   _fireballPrefab: {fileID: 2752872665808300505, guid: b6f975d6f4e2bee4b81d376a86f2a742, type: 3}
   _castPoint: {fileID: 7390234977131326189}
   _castTriggerName: CastTrigger
+  _castSound: {fileID: 8300000, guid: d10b14ebd842d79428a772209a79f1ad, type: 3}
 --- !u!114 &-422749464144832816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackCalldown: 1
+  _damageSword: 50
   _attackTriggerName: AttackTrigger
+  _attackSound: {fileID: 8300000, guid: 38ac96402b6d62545bbfd70caefc09d7, type: 3}
 --- !u!114 &4353491110657207145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +374,8 @@ MonoBehaviour:
   _hurtName: HurtTrigger
   _iFramesDuration: 0
   _numberOfFlashes: 0
+  _hurtSound: {fileID: 8300000, guid: e51458682807b6a498adf0d540e7545a, type: 3}
+  _deathSound: {fileID: 8300000, guid: 317f434a509d79c439ef8715e79887ba, type: 3}
 --- !u!114 &2093597693238778484
 MonoBehaviour:
   m_ObjectHideFlags: 0

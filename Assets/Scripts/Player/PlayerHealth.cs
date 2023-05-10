@@ -25,6 +25,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _numberOfFlashes = 3;
     private SpriteRenderer _spriteRenderer;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _hurtSound;
+    [SerializeField] private AudioClip _deathSound;
+
     public int Health { get { return _currentHealth; } set { _currentHealth = value; } }
 
     private void Awake()
@@ -46,12 +50,14 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _animator.SetBool(_isDeadName, true);
+            SoundManager.instance.PlaySound(_deathSound);
             GetComponent<PlayerMove>().enabled = false;
             return;
         }
         else
         {
             _animator.SetTrigger(_hurtName);
+            SoundManager.instance.PlaySound(_hurtSound);
             StartCoroutine(Invunerability());
         }
     }

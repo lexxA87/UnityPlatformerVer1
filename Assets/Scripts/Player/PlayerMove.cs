@@ -19,6 +19,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private string _isWalkName = "IsWalk";
     //[SerializeField] private bool _isMoveBool = false;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _jumpSound;
+
     private bool _onGround = false;
     private bool _isLeftMove = false;
     private bool _onStair = false;
@@ -48,11 +51,13 @@ public class PlayerMove : MonoBehaviour
 
     private void CheckJump()
     {
-        if (Input.GetAxis("Jump") != 0 && _onGround)
+        // Input.GetAxis("Jump") != 0
+        if (Input.GetKeyDown(KeyCode.Space) && _onGround)
         {
             _body.velocity = new Vector2(_body.velocity.x, _jumpPower);
             _onGround = false;
             _animator.SetTrigger(_jumpTriggerName);
+            SoundManager.instance.PlaySound(_jumpSound);
         }
     }
 

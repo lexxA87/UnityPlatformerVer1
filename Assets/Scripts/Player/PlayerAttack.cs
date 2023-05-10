@@ -13,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private string _attackTriggerName = "AttackTrigger";
 
+    [Header("Sound attack")]
+    [SerializeField] private AudioClip _attackSound;
+
     public int DamageSword { get { return _damageSword; } }
     private float _counterCallDown = 0;
 
@@ -26,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetAxis("Fire2") != 0 && _counterCallDown >= _attackCalldown)
         {
             _animator.SetTrigger(_attackTriggerName);
+            SoundManager.instance.PlaySound(_attackSound);
             _counterCallDown = 0;
         }
     }

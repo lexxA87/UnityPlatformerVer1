@@ -15,6 +15,9 @@ public class PlayerCast : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private string _castTriggerName = "CastTrigger";
 
+    [Header("Sound cast")]
+    [SerializeField] private AudioClip _castSound;
+
     private float _counterCallDown = 0;
     private Transform _fireballHolder;
     private Transform _castPointTransform;
@@ -63,6 +66,7 @@ public class PlayerCast : MonoBehaviour
         if (Input.GetAxis("Fire1") != 0 && _counterCallDown >= _castCalldown)
         {
             _animator.SetTrigger(_castTriggerName);
+            SoundManager.instance.PlaySound(_castSound);
             _counterCallDown = 0;
 
             CreateFireball();
