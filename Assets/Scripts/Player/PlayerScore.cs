@@ -12,6 +12,8 @@ public class PlayerScore : MonoBehaviour
     {
         _textScore.text = _scoreCoin.ToString();
     }
+
+
     public void AddCoin(int count)
     {
         _scoreCoin += count;

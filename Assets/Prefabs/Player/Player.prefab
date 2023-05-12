@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _jumpPower: 5
+  _jumpPower: 8
   _start: {fileID: 0}
   _jumpTriggerName: JumpTrigger
   _isWalkName: IsWalk

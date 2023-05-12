@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Enemy
   - PlayerDamage
+  - Trap
   layers:
   - Default
   - TransparentFX
