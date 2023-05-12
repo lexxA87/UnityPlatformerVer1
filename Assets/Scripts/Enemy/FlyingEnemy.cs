@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySideways : MonoBehaviour
+public class FlyingEnemy : MonoBehaviour
 {
     [Header("Params")]
     [Range(50, 500)]
@@ -17,8 +17,12 @@ public class EnemySideways : MonoBehaviour
     private float _leftEdge;
     private float _rightEdge;
 
+    private SpriteRenderer _spriteRenderer;
+
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
         _leftEdge = transform.position.x - _movementDistance;
         _rightEdge = transform.position.x + _movementDistance;
     }
@@ -30,6 +34,7 @@ public class EnemySideways : MonoBehaviour
             if (transform.position.x > _leftEdge)
             {
                 transform.position = new Vector3(transform.position.x - _speed * Time.deltaTime, transform.position.y, transform.position.z);
+                _spriteRenderer.flipX = false;
             }
             else _movingLeft = false;
         }
@@ -38,6 +43,7 @@ public class EnemySideways : MonoBehaviour
             if (transform.position.x < _rightEdge)
             {
                 transform.position = new Vector3(transform.position.x + _speed * Time.deltaTime, transform.position.y, transform.position.z);
+                _spriteRenderer.flipX = true;
             }
             else _movingLeft = true;
         }
@@ -45,9 +51,26 @@ public class EnemySideways : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int damage = 0;
+
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerHealth>().DamageHealth(_damage);
+        }
+
+        if (collision.CompareTag("PlayerDamage"))
+        {
+
+            if (collision.gameObject.name == "Sword")
+            {
+                damage = collision.GetComponentInParent<PlayerAttack>().DamageSword;
+            }
+            if (collision.gameObject.name == "Fireball(Clone)")
+            {
+                damage = collision.GetComponent<FireballController>().Damage;
+            }
+
+            transform.GetComponent<Health>().TakeDamage(damage);
         }
     }
 }

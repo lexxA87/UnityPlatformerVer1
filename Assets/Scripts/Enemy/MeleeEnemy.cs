@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D), typeof(Animator))]
 public class MeleeEnemy : MonoBehaviour
 {
     [Header("Attack params")]
@@ -101,7 +102,7 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(_boxCollider.bounds.size.x * _range, _boxCollider.bounds.size.y, _boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer()
+    public void DamagePlayer()
     {
         if (PlayerInSight())
         {

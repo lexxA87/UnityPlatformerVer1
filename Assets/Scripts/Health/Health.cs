@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
 public class Health : MonoBehaviour
 {
     [Header("Health")]
     [Range(100, 1000)]
     [SerializeField] private int startingHealth;
-    public int currentHealth { get; private set; }
+    public int CurrentHealth { get; private set; }
     private Animator anim;
     private bool dead;
 
@@ -25,16 +26,16 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = startingHealth;
+        CurrentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(int _damage)
     {
         if (invulnerable) return;
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0)
+        if (CurrentHealth > 0)
         {
             anim.SetTrigger("hurt");
             SoundManager.instance.PlaySound(_hurtSound);
@@ -58,7 +59,7 @@ public class Health : MonoBehaviour
     }
     public void AddHealth(int _value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + _value, 0, startingHealth);
     }
     private IEnumerator Invunerability()
     {
