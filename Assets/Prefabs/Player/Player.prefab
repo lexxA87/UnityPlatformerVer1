@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackCalldown: 1
-  _damageSword: 50
+  _damageSword: 100
   _attackTriggerName: AttackTrigger
   _attackSound: {fileID: 8300000, guid: 38ac96402b6d62545bbfd70caefc09d7, type: 3}
 --- !u!114 &4353491110657207145

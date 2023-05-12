@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6602382329363571636}
   - component: {fileID: 6602382329363571638}
   - component: {fileID: 6602382329363571627}
+  - component: {fileID: 2657545763747298225}
   m_Layer: 8
   m_Name: Goblin
   m_TagString: Enemy
@@ -175,3 +176,16 @@ MonoBehaviour:
   - {fileID: 6602382329363571638}
   _hurtSound: {fileID: 8300000, guid: e51458682807b6a498adf0d540e7545a, type: 3}
   _deathSound: {fileID: 8300000, guid: 317f434a509d79c439ef8715e79887ba, type: 3}
+--- !u!114 &2657545763747298225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602382329363571633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed88851aa0632764b8b4276378ea9efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bonusPrefab: {fileID: 2038992051837477869, guid: c3adf02cce215e542810cb85794cc579, type: 3}
