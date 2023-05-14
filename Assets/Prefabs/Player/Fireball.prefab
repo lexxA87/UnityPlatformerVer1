@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _damage: 50
-  _lifeTime: 3
+  _lifeTime: 2
   _exploreTriggerName: ExploreTrigger
 --- !u!1 &5236378799320551392
 GameObject:

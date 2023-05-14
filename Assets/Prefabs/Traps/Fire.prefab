@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2889471230180665158}
   - component: {fileID: 2889471230180665159}
   - component: {fileID: 6561361118013407573}
+  - component: {fileID: 1906784772}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Fire
@@ -234,3 +235,16 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.33226013, y: 0.0076589584}
       - {x: 0.19676971, y: 0.20645022}
+--- !u!114 &1906784772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889471230180665208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e056d03a6b675c489094f8fef378694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 200
