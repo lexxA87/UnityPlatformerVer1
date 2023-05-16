@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - PlayerDamage
   - Trap
+  - Diamond
   layers:
   - Default
   - TransparentFX

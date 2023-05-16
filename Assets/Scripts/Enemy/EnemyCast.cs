@@ -46,4 +46,39 @@ public class EnemyCast : MonoBehaviour
     {
         Instantiate(_bulletPrefab, _castPoint.position, Quaternion.identity);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        int damage = 0;
+
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHealth>().DamageHealth(_damage);
+        }
+
+        if (collision.CompareTag("PlayerDamage"))
+        {
+
+            if (collision.gameObject.name == "Sword")
+            {
+                damage = collision.GetComponentInParent<PlayerAttack>().DamageSword;
+            }
+            if (collision.gameObject.name == "Fireball(Clone)")
+            {
+                damage = collision.GetComponent<FireballController>().Damage;
+            }
+
+            transform.GetComponent<Health>().TakeDamage(damage);
+        }
+    }
+
+
+    public void DeactivateDiamonds()
+    {
+        var diamonds = GameObject.FindGameObjectsWithTag("Diamond");
+        foreach (var d in diamonds)
+        {
+            d.SetActive(false);
+        }
+    }
 }
