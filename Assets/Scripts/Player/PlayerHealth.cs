@@ -29,6 +29,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private AudioClip _hurtSound;
     [SerializeField] private AudioClip _deathSound;
 
+    [Header("Reload")]
+    [SerializeField] private int _reloadToScene;
+
     public int Health { get { return _currentHealth; } set { _currentHealth = value; } }
 
     private void Awake()
@@ -97,6 +100,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(_reloadToScene);
     }
 }
