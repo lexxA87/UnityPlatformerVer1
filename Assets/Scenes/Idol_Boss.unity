@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 575593182}
   m_Layer: 8
   m_Name: HeadBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -551,6 +551,9 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 7923404586275088328, guid: dedfc06402a1f024ea5b78eece675d7d, type: 3}
   _castPoint: {fileID: 1771532982}
   _castCalldown: 1
+  _damage: 50
+  _force: 5
+  _distanceAttack: 7
 --- !u!70 &575593183
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
