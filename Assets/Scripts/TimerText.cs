@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class TimerText : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] private float _timer = 0;
