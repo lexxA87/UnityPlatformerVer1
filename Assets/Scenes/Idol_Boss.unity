@@ -409,7 +409,8 @@ MonoBehaviour:
   _texts:
   - {fileID: 270551030}
   - {fileID: 1746290364}
-  _reloadToScene: 2
+  _timeToReload: 3
+  _reloadToScene: 0
 --- !u!4 &230859079
 Transform:
   m_ObjectHideFlags: 0
