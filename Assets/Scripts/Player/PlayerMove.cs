@@ -121,6 +121,4 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Stair")) { _onStair = false; }
     }
-
-
 }
