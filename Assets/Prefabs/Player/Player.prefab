@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1766673866}
   - component: {fileID: 1766673868}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   _numberOfFlashes: 3
   _hurtSound: {fileID: 8300000, guid: e51458682807b6a498adf0d540e7545a, type: 3}
   _deathSound: {fileID: 8300000, guid: 317f434a509d79c439ef8715e79887ba, type: 3}
+  _reloadToScene: 0
 --- !u!114 &2093597693238778484
 MonoBehaviour:
   m_ObjectHideFlags: 0
