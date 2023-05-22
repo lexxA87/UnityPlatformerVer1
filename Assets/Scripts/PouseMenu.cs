@@ -4,23 +4,40 @@ public class PouseMenu : MonoBehaviour
 {
     [SerializeField] GameObject _pouseMenu;
 
+    private bool _pause;
+
+    private void Start()
+    {
+        _pause = true;
+        Pouse();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Pouse();
+            if (!_pause)
+            {
+                Pouse();
+            }
+            else
+            {
+                Play();
+            }
         }
     }
 
     private void Pouse()
     {
         _pouseMenu.SetActive(true);
+        _pause = true;
         Time.timeScale = 0f;
     }
 
     public void Play()
     {
         _pouseMenu.SetActive(false);
+        _pause = false;
         Time.timeScale = 1.0f;
     }
 
