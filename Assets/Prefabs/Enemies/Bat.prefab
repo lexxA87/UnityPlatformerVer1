@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 50
-  _speed: 0.1
+  _speed: 2.5
   _movementDistance: 5
 --- !u!114 &-6945293550790332967
 MonoBehaviour:

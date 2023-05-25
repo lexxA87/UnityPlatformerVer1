@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2752872665808300487}
   - component: {fileID: 2752872665808300504}
   - component: {fileID: 2752872665808300505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fireball
   m_TagString: PlayerDamage
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8171126630105719687}
   - component: {fileID: 4053417162218694089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

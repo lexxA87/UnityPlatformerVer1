@@ -46,6 +46,11 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth >= 0)
             _textHealth.text = _currentHealth.ToString();
         else _textHealth.text = "0";
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            DamageHealth(10);
+        }
     }
 
     private void CheckDead()
