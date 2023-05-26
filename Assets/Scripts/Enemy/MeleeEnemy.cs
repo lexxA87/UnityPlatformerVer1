@@ -30,6 +30,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        _playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -60,10 +61,10 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(_boxCollider.bounds.size.x * _range, _boxCollider.bounds.size.y, _boxCollider.bounds.size.z),
             0, Vector2.left, 0, _playerLayer);
 
-        if (hit.collider != null)
-        {
-            _playerHealth = hit.transform.GetComponent<PlayerHealth>();
-        }
+        //if (hit.collider != null)
+        //{
+        //    _playerHealth = hit.transform.GetComponent<PlayerHealth>();
+        //}
 
         return hit.collider != null;
     }

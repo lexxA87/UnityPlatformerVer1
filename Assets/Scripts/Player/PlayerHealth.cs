@@ -21,9 +21,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private string _hurtName = "HurtTrigger";
 
     [Header("iFrames")]
-    [SerializeField] private float _iFramesDuration = 1;
-    [SerializeField] private int _numberOfFlashes = 3;
+    [SerializeField] private float _iFramesDuration;
+    [SerializeField] private int _numberOfFlashes;
     private SpriteRenderer _spriteRenderer;
+    private bool invulnerable;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip _hurtSound;
@@ -32,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Reload")]
     [SerializeField] private int _reloadToScene;
 
-    public int Health { get { return _currentHealth; } set { _currentHealth = value; } }
+    public int Health { get { return _currentHealth; } }
 
     private void Awake()
     {
@@ -46,11 +47,6 @@ public class PlayerHealth : MonoBehaviour
         if (_currentHealth >= 0)
             _textHealth.text = _currentHealth.ToString();
         else _textHealth.text = "0";
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            DamageHealth(10);
-        }
     }
 
     private void CheckDead()
@@ -84,23 +80,24 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamageHealth(int _damage)
     {
+        if (invulnerable) return;
         _currentHealth -= _damage;
         CheckDead();
     }
 
     private IEnumerator Invunerability()
     {
+        invulnerable = true;
         Physics2D.IgnoreLayerCollision(7, 8, true);
-
         for (int i = 0; i < _numberOfFlashes; i++)
         {
-            _spriteRenderer.color = new Color(1, 0, 0, 0.5f);
+            _spriteRenderer.material.color = new Color(1, 0, 0, 0.5f);
             yield return new WaitForSeconds(_iFramesDuration / (_numberOfFlashes * 2));
-            _spriteRenderer.color = Color.white;
+            _spriteRenderer.material.color = Color.white;
             yield return new WaitForSeconds(_iFramesDuration / (_numberOfFlashes * 2));
         }
-
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        invulnerable = false;
     }
 
     public void ReloadScene()

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -215,15 +215,15 @@ MonoBehaviour:
     y: 0
     width: 756.6666
     height: 397.33334
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -245,13 +245,13 @@ MonoBehaviour:
     height: 189.99997
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -560,9 +560,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 861.74866, y: 536.88324, z: 8.434861}
+    m_Target: {x: -42.5, y: -5.74, z: 0}
     speed: 2
-    m_Value: {x: 861.74866, y: 536.88324, z: 8.434861}
+    m_Value: {x: -42.5, y: -5.74, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 257.96783
+    m_Target: 2.8639145
     speed: 2
-    m_Value: 257.96783
+    m_Value: 2.8639145
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 981b0000
-      m_LastClickedID: 0
+      m_SelectedIDs: f4f8ffff
+      m_LastClickedID: -1804
       m_ExpandedIDs: 0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -771,18 +771,18 @@ MonoBehaviour:
       y: 21
       width: 754.6666
       height: 355.33334
-    m_Scale: {x: 0.49351853, y: 0.49351853}
-    m_Translation: {x: 377.3333, y: 177.66667}
+    m_Scale: {x: 0.64862406, y: 0.64862406}
+    m_Translation: {x: 377.3333, y: 177.66666}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -764.5778
-      y: -360
-      width: 1529.1556
-      height: 720
+      x: -581.74426
+      y: -273.91315
+      width: 1163.4885
+      height: 547.82635
     m_MinimalGUI: 1
   m_defaultScale: 0.49351853
   m_LastWindowPixelSize: {x: 1132, y: 564.5}
@@ -1051,22 +1051,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/Player
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: 46
   m_LastProjectPath: C:\Users\Lexx\Desktop\Projects\Learn C#\1\UnityPlatformerVer1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 510.9996}
-    m_SelectedIDs: fa630000
-    m_LastClickedID: 25594
-    m_ExpandedIDs: 00000000d4630000d6630000d8630000da630000dc630000de630000e0630000e2630000e4630000e6630000e8630000ea630000ec630000ee630000f0630000f2630000f4630000f6630000f8630000fa630000fc630000fe63000000640000026400000464000000ca9a3b
+    scrollPos: {x: 0, y: 223.00003}
+    m_SelectedIDs: eccf0000
+    m_LastClickedID: 53228
+    m_ExpandedIDs: 00000000126500001465000016650000186500001a6500001c6500001e65000020650000226500002465000026650000286500002a6500002c6500002e65000030650000326500003465000036650000386500003a65000068bf000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1094,7 +1094,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d4630000d6630000d8630000da630000dc630000de630000e0630000e2630000e4630000e6630000e8630000ea630000ec630000ee630000f0630000f2630000f4630000f6630000f8630000fa630000fc630000fe630000006400000264000004640000
+    m_ExpandedIDs: 00000000126500001465000016650000186500001a6500001c6500001e65000020650000226500002465000026650000286500002a6500002c6500002e65000030650000326500003465000036650000386500003a650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1119,10 +1119,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 981b0000
-    m_LastClickedInstanceID: 7064
+    m_SelectedInstanceIDs: b4070000
+    m_LastClickedInstanceID: 1972
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000025d000074ac000000ad0000c05d0000a85d0000b05d0000c0760000245f000074880000067c0000bab100005ac2000016d0000002640000d8da00008660000082de000014b5000038b500004e610000609b000058d10000ac9c00000a890000fa65000010660000e67400006e7500001e6600005866000000000000
+    m_ExpandedInstanceIDs: c6230000025d000074ac000000ad0000c05d0000a85d0000b05d0000c0760000245f000074880000067c0000bab100005ac2000016d0000002640000d8da00008660000082de000014b5000038b500004e610000609b000058d10000ac9c00000a890000fa65000010660000e67400006e7500001e6600005866000000000000cc6500007c65000032650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2140
+  m_LastSelectedObjectID: -1804
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
