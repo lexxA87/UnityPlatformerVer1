@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private int _currentHealth = 200;
     [SerializeField]
     [Range(50, 500)]
-    private int _maxHealth = 200;
+    private int _maxHealth = 500;
     [SerializeField] private TextMeshProUGUI _textHealth;
 
     [Header("Animation")]
@@ -39,6 +39,13 @@ public class PlayerHealth : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _reloadToScene = SceneManager.GetActiveScene().buildIndex;
+
+    }
+
+    private void Start()
+    {
+        _currentHealth = PlayerManager.Instance.Player.Health;
         _textHealth.text = _currentHealth.ToString();
     }
 

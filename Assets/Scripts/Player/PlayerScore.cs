@@ -8,8 +8,11 @@ public class PlayerScore : MonoBehaviour
     private int _scoreCoin = 0;
     [SerializeField] private TextMeshProUGUI _textScore;
 
-    private void Awake()
+    public int ScoreCoin { get { return _scoreCoin; } }
+
+    private void Start()
     {
+        _scoreCoin = PlayerManager.Instance.Player.Coin;
         _textScore.text = _scoreCoin.ToString();
     }
 

@@ -8,9 +8,11 @@ public class TimerText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textTimer;
     [SerializeField] private bool _isTimerOn;
 
+    public float TimerCount { get { return _timer; } }
 
     void Start()
     {
+        _timer = PlayerManager.Instance.Player.Time;
         _isTimerOn = true;
     }
 

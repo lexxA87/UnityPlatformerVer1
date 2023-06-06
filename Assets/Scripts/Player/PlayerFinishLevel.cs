@@ -27,6 +27,8 @@ public class PlayerFinishLevel : MonoBehaviour
 
     public void ReloadNextScene()
     {
+        PlayerManager.Instance.WriteParamsPlayer();
+
         SceneManager.LoadScene(_numberNextScene);
     }
 }

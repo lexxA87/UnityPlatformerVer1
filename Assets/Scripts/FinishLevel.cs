@@ -33,6 +33,8 @@ public class FinishLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerManager.Instance.WriteParamsPlayer();
+
             SceneManager.LoadScene(_loadScene);
         }
     }
