@@ -79951,6 +79951,10 @@ PrefabInstance:
       propertyPath: _levelBoss
       value: 
       objectReference: {fileID: 479589729}
+    - target: {fileID: 2758779712317710397, guid: b91c53e860f094f498079720edbd1ac7, type: 3}
+      propertyPath: _loadScene
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b91c53e860f094f498079720edbd1ac7, type: 3}
 --- !u!1001 &2889471229845602599

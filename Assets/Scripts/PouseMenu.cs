@@ -3,8 +3,10 @@ using UnityEngine;
 public class PouseMenu : MonoBehaviour
 {
     [SerializeField] GameObject _pouseMenu;
+    [SerializeField] GameObject _settingsMenu;
 
     private bool _pause;
+    private bool _settings;
 
     private void Start()
     {
@@ -16,13 +18,18 @@ public class PouseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_pause)
+            if (!_pause && !_settings)
             {
                 Pouse();
             }
             else
             {
-                Play();
+                if (_settings)
+                {
+                    ExitSettingsMenu();
+                }
+                else
+                    Play();
             }
         }
     }
@@ -39,6 +46,20 @@ public class PouseMenu : MonoBehaviour
         _pouseMenu.SetActive(false);
         _pause = false;
         Time.timeScale = 1.0f;
+    }
+
+    public void SettingsMenu()
+    {
+        _settingsMenu.SetActive(true);
+        _settings = true;
+        _pouseMenu.SetActive(false);
+    }
+
+    public void ExitSettingsMenu()
+    {
+        _settingsMenu.SetActive(false);
+        _settings = false;
+        _pouseMenu.SetActive(true);
     }
 
     public void Exit()
