@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(gameObject);
+            DestroyPlayerManager();
             return;
         }
 
@@ -30,5 +30,10 @@ public class PlayerManager : MonoBehaviour
         Player.Health = _health;
         Player.Coin = _coin;
         Player.Time = _time;
+    }
+
+    public void DestroyPlayerManager()
+    {
+        Destroy(gameObject);
     }
 }

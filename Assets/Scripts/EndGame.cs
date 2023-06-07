@@ -40,7 +40,10 @@ public class EndGame : MonoBehaviour
             if (_timer > _timeToReload)
             {
                 if (Input.anyKey)
+                {
+                    PlayerManager.Instance.DestroyPlayerManager();
                     SceneManager.LoadScene(_reloadToScene);
+                }
             }
         }
     }

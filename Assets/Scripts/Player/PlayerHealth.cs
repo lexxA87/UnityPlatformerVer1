@@ -63,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
             _animator.SetBool(_isDeadName, true);
             SoundManager.instance.PlaySound(_deathSound);
             GetComponent<PlayerMove>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             return;
         }
         else
